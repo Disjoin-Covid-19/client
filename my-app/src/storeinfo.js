@@ -33,6 +33,8 @@ class StoreInfo extends React.Component {
     };
 
     componentDidMount() {
+        // This method gets invoked when the component loads into the DOM
+        // This is where you typically want to make calls to load data, etc.
         getStoreInfo(123)
             .then(data => {
                 console.log(`Store Data: ${JSON.stringify(data)}`);
@@ -42,6 +44,8 @@ class StoreInfo extends React.Component {
     
     render() {
         const { classes } = this.props;
+        // This is checking to see if the data has been loaded yet - if not, don't try to render
+        // Could also put up a loading spinner or similar.
         if(!this.state.storeData) {
             return <div />
         };
