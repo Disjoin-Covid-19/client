@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import { Button, Typography, Toolbar, Divider, Grid, AppBar, IconButton } from '@material-ui/core/';
 import GaugeChart from 'react-gauge-chart';
 import logo from './Walmart-Logo.png';
@@ -7,9 +7,10 @@ import BookmarkIcon from '@material-ui/icons/Bookmark';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import SearchIcon from '@material-ui/icons/Search';
+import getStoreInfo from './services/storeInfoService';
 import './style.css';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = theme => ({
     typography: {
         fontFamily: 'Roboto',
     },
@@ -23,13 +24,38 @@ const useStyles = makeStyles((theme) => ({
     small: {
         fontSize: "0.1em",
         padding: "1%",
-    },
-  }));
-  
-function App() {
-    const classes = useStyles();
-    return (
-        <div>
+    }
+});
+
+class StoreInfo extends React.Component {
+    state = {
+        storeData: null
+    };
+
+    componentDidMount() {
+        getStoreInfo(123)
+            .then(data => {
+                console.log(`Store Data: ${JSON.stringify(data)}`);
+                this.setState({storeData: data});
+            });
+    }
+    
+    render() {
+        const { classes } = this.props;
+        if(!this.state.storeData) {
+            return <div />
+        };
+
+        return (
+            <div>
+            <h1>Store data</h1>
+            <ul>
+                {this.state.storeData
+                    .map(entry =>
+                        <li>ID: {entry.id}, Count: {entry.count}, Timestamp: {entry.timestamp}</li> 
+                    )
+                }
+            </ul>
             <AppBar position="static" color="transparent" elevation={0}>
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="back">
@@ -111,9 +137,10 @@ function App() {
                         <b>EXPECTED FOOT TRAFFIC ON APRIL 20, 2020</b>
                     </Typography>   
                 </Grid>
-            </Grid> 
+            </Grid>
         </div>
-    );
+        );
+    }
 }
 
-export default App;
+export default withStyles(useStyles)(StoreInfo);
