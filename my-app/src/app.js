@@ -8,6 +8,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import SearchIcon from '@material-ui/icons/Search';
 import './style.css';
+//import extract from './extractAPI.js';
 
 const useStyles = makeStyles((theme) => ({
     typography: {
@@ -24,10 +25,18 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "0.1em",
         padding: "1%",
     },
-  }));
-  
+}));
+
+function extract() {
+    fetch('/data')
+        .then((response) => response.json())
+        .then((jsonData) => console.log(jsonData));
+};
+
 function App() {
     const classes = useStyles();
+    let data = extract();
+    console.log(data);
     return (
         <div>
             <AppBar position="static" color="transparent" elevation={0}>
@@ -54,7 +63,7 @@ function App() {
                         justify="center"
                         alignItems="center" spacing={1}>
                             <Grid item xs={3}>
-                                <img className="logo" src={logo}/>
+                                <img className="logo" alt="Walmart logo" src={logo}/>
                             </Grid>
                             <Grid item xs={9}>
                                 <Typography className="title">
@@ -109,6 +118,7 @@ function App() {
                 <Grid item xs={12} className={classes.section1}>
                     <Typography>
                         <b>EXPECTED FOOT TRAFFIC ON APRIL 20, 2020</b>
+
                     </Typography>   
                 </Grid>
             </Grid> 
