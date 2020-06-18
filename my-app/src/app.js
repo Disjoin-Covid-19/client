@@ -7,7 +7,7 @@ import BookmarkIcon from '@material-ui/icons/Bookmark';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import SearchIcon from '@material-ui/icons/Search';
-import Graph from './chart.js';
+import Chart from './newchart.js';
 import './style.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -121,7 +121,7 @@ function App() {
                     <Typography>
                         <b>EXPECTED FOOT TRAFFIC ON {curDate}</b>
                     </Typography>
-                    <Graph />
+                    <Chart />
                 </Grid>
             </Grid> 
         </div>
