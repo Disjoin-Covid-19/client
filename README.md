@@ -25,7 +25,7 @@ cd my-app/server
 node expressjson.js 
 ```
 
-2. Run the app (I would recommend using the "inspect element" tool on your browser to view the mobile interface of the app, check link for help https://www.sitepoint.com/how-to-simulate-mobile-devices-with-device-mode-in-chrome/):
+2. Run the app (I would recommend using the "inspect element" tool on your browser to view the mobile interface of the app, check [here](https://www.sitepoint.com/how-to-simulate-mobile-devices-with-device-mode-in-chrome/) for help):
 
 ```
 cd my-app
