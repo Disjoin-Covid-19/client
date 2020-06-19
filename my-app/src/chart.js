@@ -1,137 +1,108 @@
-import * as React from 'react';
-import {
-  Chart,
-  ArgumentAxis,
-  ValueAxis,
-  AreaSeries,
-  ZoomAndPan,
-} from '@devexpress/dx-react-chart-material-ui';
-import Paper from '@material-ui/core/Paper';
-import { curveCatmullRom, area } from "d3-shape";
+import React, {Component} from 'react';
+import { Line } from 'react-chartjs-2';
+import 'chartjs-plugin-zoom';
 
-
-// Data
-
-
-import React from "react";
-import "./styles.css";
-
-import { Line } from "react-chartjs-2";
 
 async function extract() {
-  const data = await fetch('/data');
-  return await data.json();
+    const data = await fetch('/data');
+    return await data.json();
 };
 
-const data = extract();
-console.log(data);
-extract().then((data)=>{
-  console.log(data);
-  const x = data.map(d => {
-    const date = new Date(d.date);
-    return { ...d, date };
-  })
-  .sort((a, b) => b.date - a.date);
-})
-
-
-const data = extract();
-console.log(data);
-extract().then((data)=>{
-  console.log(data);
-  const x = data.map(d => {
-    const date = new Date(d.date);
-    return { ...d, date };
-  });
-  //.sort((a, b) => b.date - a.date);
-})
-
-
-class Chart extends Component{
-  state = {
-    data: data,
-    labels: yearLabels
-  }
-
-  static defaultProps = {
-    displayTitle:true
-  }
-
-  render(){
-    return (
-      <div className="chart">
-        <Line
-          data={this.state.chartData}
-          options={{
-            title:{
-              display:this.props.displayTitle,
-              text:'Largest Cities In '+this.props.location,
-              fontSize:25
+const options = {
+    responsive: true,
+    legend: {
+        display: false
+    },
+    scales: {
+        xAxes: [{
+            type: 'time',
+            ticks: {
+                padding: -5,
+                autoSkip: true,
+                maxTicksLimit: 4,
+                maxRotation: 0,
+                minRotation: 0
             },
-            legend:{
-              display:this.props.displayLegend,
-              position:this.props.legendPosition
-            }
-          }}
-        />
-      </div>
-    )
-  }
-}
+            time: {
+                unit: 'hour'
+            },
+            gridLines: {
+                display:false
+            },
+            display: true
+        }],
+        yAxes: [{
+            ticks: {
+                beginAtZero: true,
+            },
+            gridLines: {
+                display:false
+            },
+            display: false
+        }]
+    },
+    zoom: {
+        enabled: true,
+        mode: 'x',
+    },
+    pan: {
+        enabled: true,
+        mode: 'x',
+    },
+};
 
-export default Chart;
+export default class Chart extends Component {
+    state = {
+        data: null,
+    };
 
-constructor(){
-  super();
-  this.state = {
-    chartData:{}
-  }
-}
-
-componentWillMount(){
-  this.getchartData();
-}
-
-getChartData(){
-  // Ajax calls here
-  this.setState({
-    chartData:{
-      labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
-      datasets:[
-        {
-          label:'Population',
-          data:[
-            617594,
-            181045,
-            153060,
-            106519,
-            105162,
-            95072
-          ],
-          backgroundColor:[
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(54, 162, 235, 0.6)',
-            'rgba(255, 206, 86, 0.6)',
-            'rgba(75, 192, 192, 0.6)',
-            'rgba(153, 102, 255, 0.6)',
-            'rgba(255, 159, 64, 0.6)',
-            'rgba(255, 99, 132, 0.6)'
-          ]
-        }
-      ]
+    componentDidMount() {
+        let labels = [];
+        let values = [];
+        extract().then((raw)=>{
+            raw.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+            raw.map(d => {
+                const date = new Date(d.date);
+                labels.push(date);
+                values.push(d.customerct);
+            });
+            const data = (canvas) => {
+                const ctx = canvas.getContext("2d");
+                const grd = ctx.createLinearGradient(0,0,ctx.canvas.clientWidth,0);
+                grd.addColorStop(0, "#fec8dc");
+                grd.addColorStop(1, "#c5dffc");
+                return {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: "customer",
+                            fill: true,
+                            backgroundColor: grd,
+                            borderWidth: 0,
+                            pointRadius: 0,
+                            data: values
+                        }
+                    ]
+                }
+            };
+            this.setState({data: data});
+        });
     }
-  });
+
+    render() {
+        if (this.state.data) {
+            return (
+                <div style={{"padding": "5%"}}>
+                    <Line
+                    data={this.state.data}
+                    options={options}
+                    />
+                </div>
+              );
+        }
+        else {
+            return null;
+        }
+    }
 }
 
-render() {
-  return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
-      </div>
-      <Chart chartData={this.state.chartData} location="Massachusetts" legendPosition="bottom"/>
-    </div>
-  );
-}
-}
