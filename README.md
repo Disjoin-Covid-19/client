@@ -1,6 +1,6 @@
 # Disjoin Front End
 
-One Paragraph of project description goes here
+The user interface of the Disjoin web application, designed for mobile use
 
 ## Getting Started
 
@@ -36,22 +36,32 @@ npm start
 
 End with an example of getting some data out of the system or using it for a little demo
 
+<p align="center">
+  <img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.09.47%20PM.png" width="20%" style="border: 1px solid black">
+  <br>
+  <em>Landing page</em>
+</p>
 
+<p align="center">
+  <img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.10.01%20PM.png" width="20%">
+  <br>
+  <em>List of local supermarket stores</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.19.41%20PM.png" width="20%">
+  <br>
+  <em>Foot traffic information for a specific store</em>
+</p>
 
 
 ## Built With
 
-* [React](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [MaterialUI](https://maven.apache.org/) - Dependency Management
+* [React](https://reactjs.org/) - JavaScript library for building user interfaces
+* [MaterialUI](https://material-ui.com/) - React UI framework
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Kassie Wang** - *Initial work and app skeleton*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+See also the list of [contributors](https://github.com/Disjoin-Covid-19/frontend/graphs/contributors) who participated in this project.
