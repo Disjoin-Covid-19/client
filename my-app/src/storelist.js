@@ -33,32 +33,38 @@ function StoreList() {
         {
             name: "Walmart",
             address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
-            logoSrc: walmartlogo
+            logoSrc: walmartlogo,
+            currentTraffic: 10
         },
         {
             name: "Walmart2",
             address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
-            logoSrc: walmartlogo
+            logoSrc: walmartlogo,
+            currentTraffic: 20
         },
         {
             name: "Walmart3",
             address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
-            logoSrc: walmartlogo
+            logoSrc: walmartlogo,
+            currentTraffic: 30
         },
         {
             name: "Walmart4",
             address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
-            logoSrc: walmartlogo
+            logoSrc: walmartlogo,
+            currentTraffic: 40
         },
         {
             name: "Walmart5",
             address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
-            logoSrc: walmartlogo
+            logoSrc: walmartlogo,
+            currentTraffic: 50
         },
         {
             name: "Walmart6",
             address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
-            logoSrc: walmartlogo
+            logoSrc: walmartlogo,
+            currentTraffic: 60
         },
     ];
 
@@ -114,10 +120,7 @@ function StoreList() {
         </Typography>
         <List style={{padding: 0}}>
             {storeList.map((store,index) => {
-                const storeItem = <StoreListItem 
-                name={store.name}
-                address={store.address}
-                logoSrc={store.logoSrc}
+                const storeItem = <StoreListItem {...store}
                 />;
 
                 if (index === 0) return <div>{storeItem}</div>;

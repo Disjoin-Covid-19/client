@@ -57,7 +57,7 @@ function StoreListItem(props) {
                                     needleBaseColor={"#000"}
                                     colors={["#3AAEFF", "#37B75B", "#F3DC41", "#F9741B", "#FF0101"]} 
                                     arcWidth={0.3} 
-                                    percent={0.37} 
+                                    percent={props.currentTraffic/100} 
                                 />
                             </Grid>
                             <Grid item xs={3}>
