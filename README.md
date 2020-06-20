@@ -37,7 +37,7 @@ npm start
 End with an example of getting some data out of the system or using it for a little demo
 
 <div style="text-align: center">
-<img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.09.47%20PM.png" style="width: 100px">
+<img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.09.47%20PM.png" style="width: 20em">
 </div>
 
 ## Built With
