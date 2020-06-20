@@ -29,23 +29,38 @@ const useStyles = makeStyles((theme) => ({
   
 function StoreList() {
     const classes = useStyles();
-    // const storeList = [
-    //     {
-    //         name: "Walmart",
-    //         address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
-    //         logoSrc: { walmartlogo }
-    //     },
-    //     {
-    //         name: "Walmart2",
-    //         address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
-    //         logoSrc: { walmartlogo }
-    //     },
-    //     {
-    //         name: "Walmart3",
-    //         address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
-    //         logoSrc: { walmartlogo }
-    //     },
-    // ];
+    const storeList = [
+        {
+            name: "Walmart",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo
+        },
+        {
+            name: "Walmart2",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo
+        },
+        {
+            name: "Walmart3",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo
+        },
+        {
+            name: "Walmart4",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo
+        },
+        {
+            name: "Walmart5",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo
+        },
+        {
+            name: "Walmart6",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo
+        },
+    ];
 
     return (
       <div className={classes.root}>
@@ -98,48 +113,23 @@ function StoreList() {
             <b>NEARBY STORES</b>
         </Typography>
         <List style={{padding: 0}}>
-            <StoreListItem 
-                name="Walmart"
-                address="Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710"
-                logoSrc={ walmartlogo }                
-                />
-            <Divider variant="middle" component="li" />
-            <StoreListItem 
-                name="Walmart"
-                address="Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710"
-                logoSrc={ walmartlogo }                
-                />
-            <Divider variant="middle" component="li" />
+            {storeList.map((store,index) => {
+                const storeItem = <StoreListItem 
+                name={store.name}
+                address={store.address}
+                logoSrc={store.logoSrc}
+                />;
 
-            <StoreListItem 
-                name="Walmart"
-                address="Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710"
-                logoSrc={ walmartlogo }
-                />
-            <Divider variant="middle" component="li" />
-            <StoreListItem 
-                name="Walmart"
-                address="Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710"
-                logoSrc={ walmartlogo }                
-                />
-            <Divider variant="middle" component="li" />
-            <StoreListItem 
-                name="Walmart"
-                address="Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710"
-                logoSrc={ walmartlogo }                
-                />
-            <Divider variant="middle" component="li" />
-            <StoreListItem 
-                name="Walmart"
-                address="Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710"
-                logoSrc={ walmartlogo }
-                />
+                if (index === 0) return <div>{storeItem}</div>;
 
+                return <div>
+                        <Divider variant="middle" component="li" />
+                        {storeItem}                        
+                    </div>;
+            })}
         </List>
       </div>
     );
 }
 
 export default StoreList;
-
-
