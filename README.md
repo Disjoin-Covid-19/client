@@ -56,6 +56,6 @@ npm start
 
 ## Authors
 
-* **Kassie Wang** - *initial work and app skeleton*
+* **Kassie Wang** 
 
 See also the list of [contributors](https://github.com/Disjoin-Covid-19/frontend/graphs/contributors) who participated in this project.
