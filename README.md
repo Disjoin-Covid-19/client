@@ -1,61 +1,68 @@
-# Disjoin Front End
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The user interface of the Disjoin web application, designed for mobile use
+## Available Scripts
 
-## Getting Started
+In the project directory, you can run:
 
-Download the my-app folder or clone the [repo](https://github.com/Disjoin-Covid-19/frontend)
+### `npm start`
 
-### Prerequisites
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Node.js and npm (follow this [link](https://www.npmjs.com/get-npm) for instructions)
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-```
-npm install
-```
+### `npm test`
 
-### Running the App
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-1. Set up the local server of mockup data:
+### `npm run build`
 
-```
-cd my-app/server 
-node expressjson.js 
-```
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-2. Run the app (I would recommend using the "inspect element" tool on your browser to view the mobile interface of the app, check [here](https://www.sitepoint.com/how-to-simulate-mobile-devices-with-device-mode-in-chrome/) for help):
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-```
-cd my-app
-npm start
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-<p align="center">
-  <img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.09.47%20PM.png" width="20%" style="border: 1px solid black">
-  <br>
-  <em>Landing page</em>
-</p>
+### `npm run eject`
 
-<p align="center">
-  <img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.10.01%20PM.png" width="20%">
-  <br>
-  <em>List of local supermarket stores</em>
-</p>
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-<p align="center">
-  <img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%2010.58.26%20PM.png" width="20%">
-  <br>
-  <em>Foot traffic information for a specific store</em>
-</p>
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-## Built With
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-* [React](https://reactjs.org/) - JavaScript library for building user interfaces
-* [MaterialUI](https://material-ui.com/) - React UI framework
+## Learn More
 
-## Authors
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-* **Kassie Wang** 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-See also the list of [contributors](https://github.com/Disjoin-Covid-19/frontend/graphs/contributors) who participated in this project.
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
