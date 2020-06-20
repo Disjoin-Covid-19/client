@@ -36,7 +36,7 @@ npm start
 
 End with an example of getting some data out of the system or using it for a little demo
 
-
+![landingpage](screenshots/Screen Shot 2020-06-19 at 9.09.47 PM.png)
 
 
 ## Built With
