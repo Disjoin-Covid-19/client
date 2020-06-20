@@ -8,8 +8,6 @@ Download the my-app folder or clone the [repo](https://github.com/Disjoin-Covid-
 
 ### Prerequisites
 
-What things you need to install the software and how to install them:
-
 Node.js and npm (follow this [link](https://www.npmjs.com/get-npm) for instructions)
 
 ```
@@ -17,8 +15,6 @@ npm install
 ```
 
 ### Running the App
-
-A step by step series of examples that tell you how to get a development env running.
 
 1. Set up the local server of mockup data:
 
@@ -34,8 +30,6 @@ cd my-app
 npm start
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
 <p align="center">
   <img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.09.47%20PM.png" width="20%" style="border: 1px solid black">
   <br>
@@ -49,7 +43,7 @@ End with an example of getting some data out of the system or using it for a lit
 </p>
 
 <p align="center">
-  <img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.19.41%20PM.png" width="20%">
+  <img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%2010.58.26%20PM.png" width="20%">
   <br>
   <em>Foot traffic information for a specific store</em>
 </p>
@@ -62,6 +56,6 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Authors
 
-* **Kassie Wang** - *Initial work and app skeleton*
+* **Kassie Wang** - *initial work and app skeleton*
 
 See also the list of [contributors](https://github.com/Disjoin-Covid-19/frontend/graphs/contributors) who participated in this project.
