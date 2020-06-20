@@ -4,7 +4,7 @@ One Paragraph of project description goes here
 
 ## Getting Started
 
-Download the my-app folder or clone the [repo](https://github.com/Disjoin-Covid-19/frontend =100X)
+Download the my-app folder or clone the [repo](https://github.com/Disjoin-Covid-19/frontend)
 
 ### Prerequisites
 
@@ -37,7 +37,13 @@ npm start
 End with an example of getting some data out of the system or using it for a little demo
 
 <p align="center">
-<img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.09.47%20PM.png" width="30%"></p>
+<img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.09.47%20PM.png" width="30%" style="border: 1px">Landing page</p>
+
+<p align="center">
+<img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.10.01%20PM.png" width="30%" style="border: 1px">List of local supermarket stores</p>
+
+<p align="center">
+<img src="https://github.com/Disjoin-Covid-19/frontend/blob/master/screenshots/Screen%20Shot%202020-06-19%20at%209.19.41%20PM.png" width="30%" style="border: 1px">Foot traffic information for a specific store</p>
 
 
 ## Built With
