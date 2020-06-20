@@ -4,7 +4,7 @@ One Paragraph of project description goes here
 
 ## Getting Started
 
-Download the my-app folder or clone the [repo](https://github.com/Disjoin-Covid-19/frontend =100x)
+Download the my-app folder or clone the [repo](https://github.com/Disjoin-Covid-19/frontend =100X)
 
 ### Prerequisites
 
