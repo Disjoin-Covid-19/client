@@ -1,4 +1,4 @@
-# Project Title
+# Disjoin Front End
 
 One Paragraph of project description goes here
 
@@ -8,7 +8,9 @@ Download the my-app folder or clone the [repo](https://github.com/Disjoin-Covid-
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to install the software and how to install them:
+
+Node.js and npm (follow this [link](https://www.npmjs.com/get-npm) for instructions)
 
 ```
 npm install
@@ -33,6 +35,9 @@ npm start
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
+
+
+
 
 ## Built With
 
