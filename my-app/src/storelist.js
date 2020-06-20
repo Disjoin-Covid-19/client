@@ -1,14 +1,12 @@
 import React from 'react';
-import { Button, IconButton, List, ListItem, Divider, ListItemText, AppBar, Toolbar, Typography, InputBase, Grid } from '@material-ui/core/';
+import { IconButton, List, Divider, AppBar, Toolbar, Typography, InputBase, Grid } from '@material-ui/core/';
 import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import BookmarkIcon from '@material-ui/icons/Bookmark';
 import dislogo from './whitedisjoin.png';
 import walmartlogo from './Walmart-Logo.png';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import './style.css';
-import GaugeChart from 'react-gauge-chart';
+import StoreListItem from './storeListItem'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,18 +25,49 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 0,
         width: '100%',
       },
-    smallbutton: {
-        padding: "5%",
-        color: "#FFF", 
-        minHeight: "0%",
-        backgroundColor: "#019AE8", 
-        fontSize: "0.6em",
-        width: "100%",
-    }
 }));
   
 function StoreList() {
     const classes = useStyles();
+    const storeList = [
+        {
+            name: "Walmart",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo,
+            currentTraffic: 10
+        },
+        {
+            name: "Walmart2",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo,
+            currentTraffic: 20
+        },
+        {
+            name: "Walmart3",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo,
+            currentTraffic: 30
+        },
+        {
+            name: "Walmart4",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo,
+            currentTraffic: 40
+        },
+        {
+            name: "Walmart5",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo,
+            currentTraffic: 50
+        },
+        {
+            name: "Walmart6",
+            address: "Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710",
+            logoSrc: walmartlogo,
+            currentTraffic: 60
+        },
+    ];
+
     return (
       <div className={classes.root}>
         <AppBar position="static">
@@ -90,296 +119,20 @@ function StoreList() {
             <b>NEARBY STORES</b>
         </Typography>
         <List style={{padding: 0}}>
-            <ListItem alignItems="flex-start">
-                <div>
-                    <Grid container direction="row"
-                    justify="center"
-                    alignItems="center" spacing={1}>
-                        <Grid item xs={3}>
-                            <img className="logo" alt="Walmart logo" src={walmartlogo}/>
-                        </Grid>
-                        <Grid item xs={9} container>
-                            <Grid direction="row" container>
-                                <Grid item xs={11} style={{padding:"0.5%"}}>
-                                    <Typography style={{fontSize: "0.7em"}}>
-                                        <b>Walmart</b>
-                                    </Typography>
-                                    <Typography style={{fontSize: "0.5em"}}>
-                                        Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={1}>
-                                    <IconButton color="inherit" aria-label="heart" style={{paddingLeft: 0}}>
-                                        <FavoriteBorderIcon />
-                                    </IconButton>
-                                </Grid>
-                            </Grid>
-                            <Grid direction="row" container>
-                                <Grid item xs={3}>
-                                    <GaugeChart id="gauge1" 
-                                    nrOfLevels={25}
-                                    hideText={true}
-                                    animate={false}
-                                    needleColor={"#C8CACF"}
-                                    needleBaseColor={"#000"}
-                                    colors={["#3AAEFF", "#37B75B", "#F3DC41", "#F9741B", "#FF0101"]} 
-                                    arcWidth={0.3} 
-                                    percent={0.37} 
-                                    />
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <div></div>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Link to="/storeinfo" style={{textDecoration: "none"}}>
-                                        <Button
-                                            variant="contained"
-                                            startIcon={<BookmarkIcon />}
-                                            className={classes.smallbutton}
-                                        >
-                                            <b>BOOK YOUR SLOT</b>
-                                        </Button>
-                                    </Link>
-                                </Grid>
-                            </Grid>  
-                        </Grid>
-                    </Grid>
-                </div>
-            </ListItem>
-            <Divider variant="middle" component="li" />
-            <ListItem alignItems="flex-start">
-                <div>
-                    <Grid container direction="row"
-                    justify="center"
-                    alignItems="center" spacing={1}>
-                        <Grid item xs={3}>
-                            <img className="logo" alt="Walmart logo" src={walmartlogo}/>
-                        </Grid>
-                        <Grid item xs={9} container>
-                            <Grid direction="row" container>
-                                <Grid item xs={11} style={{padding:"0.5%"}}>
-                                    <Typography style={{fontSize: "0.7em"}}>
-                                        <b>Walmart</b>
-                                    </Typography>
-                                    <Typography style={{fontSize: "0.5em"}}>
-                                        Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={1}>
-                                    <IconButton color="inherit" aria-label="heart" style={{paddingLeft: 0}}>
-                                        <FavoriteBorderIcon />
-                                    </IconButton>
-                                </Grid>
-                            </Grid>
-                            <Grid direction="row" container>
-                                <Grid item xs={3}>
-                                    <GaugeChart id="gauge2"
-                                    nrOfLevels={25}
-                                    hideText={true}
-                                    animate={false}
-                                    needleColor={"#C8CACF"}
-                                    needleBaseColor={"#000"}
-                                    colors={["#3AAEFF", "#37B75B", "#F3DC41", "#F9741B", "#FF0101"]} 
-                                    arcWidth={0.3} 
-                                    percent={0.37} 
-                                    />
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <div></div>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Link to="/storeinfo" style={{textDecoration: "none"}}>
-                                        <Button
-                                            variant="contained"
-                                            startIcon={<BookmarkIcon />}
-                                            className={classes.smallbutton}
-                                        >
-                                            <b>BOOK YOUR SLOT</b>
-                                        </Button>
-                                    </Link>
-                                </Grid>
-                            </Grid>  
-                        </Grid>
-                    </Grid>
-                </div>
-            </ListItem>
-            <Divider variant="middle" component="li" />
-            <ListItem alignItems="flex-start">
-                <div>
-                    <Grid container direction="row"
-                    justify="center"
-                    alignItems="center" spacing={1}>
-                        <Grid item xs={3}>
-                            <img className="logo" alt="Walmart logo" src={walmartlogo}/>
-                        </Grid>
-                        <Grid item xs={9} container>
-                            <Grid direction="row" container>
-                                <Grid item xs={11} style={{padding:"0.5%"}}>
-                                    <Typography style={{fontSize: "0.7em"}}>
-                                        <b>Walmart</b>
-                                    </Typography>
-                                    <Typography style={{fontSize: "0.5em"}}>
-                                        Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={1}>
-                                    <IconButton color="inherit" aria-label="heart" style={{paddingLeft: 0}}>
-                                        <FavoriteBorderIcon />
-                                    </IconButton>
-                                </Grid>
-                            </Grid>
-                            <Grid direction="row" container>
-                                <Grid item xs={3}>
-                                    <GaugeChart id="gauge3"
-                                    nrOfLevels={25}
-                                    hideText={true}
-                                    animate={false}
-                                    needleColor={"#C8CACF"}
-                                    needleBaseColor={"#000"}
-                                    colors={["#3AAEFF", "#37B75B", "#F3DC41", "#F9741B", "#FF0101"]} 
-                                    arcWidth={0.3} 
-                                    percent={0.37} 
-                                    />
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <div></div>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Link to="/storeinfo" style={{textDecoration: "none"}}>
-                                        <Button
-                                            variant="contained"
-                                            startIcon={<BookmarkIcon />}
-                                            className={classes.smallbutton}
-                                        >
-                                            <b>BOOK YOUR SLOT</b>
-                                        </Button>
-                                    </Link>
-                                </Grid>
-                            </Grid>  
-                        </Grid>
-                    </Grid>
-                </div>
-            </ListItem>
-            <Divider variant="middle" component="li" />
-            <ListItem alignItems="flex-start">
-                <div>
-                    <Grid container direction="row"
-                    justify="center"
-                    alignItems="center" spacing={1}>
-                        <Grid item xs={3}>
-                            <img className="logo" alt="Walmart logo" src={walmartlogo}/>
-                        </Grid>
-                        <Grid item xs={9} container>
-                            <Grid direction="row" container>
-                                <Grid item xs={11} style={{padding:"0.5%"}}>
-                                    <Typography style={{fontSize: "0.7em"}}>
-                                        <b>Walmart</b>
-                                    </Typography>
-                                    <Typography style={{fontSize: "0.5em"}}>
-                                        Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={1}>
-                                    <IconButton color="inherit" aria-label="heart" style={{paddingLeft: 0}}>
-                                        <FavoriteBorderIcon />
-                                    </IconButton>
-                                </Grid>
-                            </Grid>
-                            <Grid direction="row" container>
-                                <Grid item xs={3}>
-                                    <GaugeChart id="gauge4" 
-                                    nrOfLevels={25}
-                                    hideText={true}
-                                    animate={false}
-                                    needleColor={"#C8CACF"}
-                                    needleBaseColor={"#000"}
-                                    colors={["#3AAEFF", "#37B75B", "#F3DC41", "#F9741B", "#FF0101"]} 
-                                    arcWidth={0.3} 
-                                    percent={0.37} 
-                                    />
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <div></div>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Link to="/storeinfo" style={{textDecoration: "none"}}>
-                                        <Button
-                                            variant="contained"
-                                            startIcon={<BookmarkIcon />}
-                                            className={classes.smallbutton}
-                                        >
-                                            <b>BOOK YOUR SLOT</b>
-                                        </Button>
-                                    </Link>
-                                </Grid>
-                            </Grid>  
-                        </Grid>
-                    </Grid>
-                </div>
-            </ListItem>
-            <Divider variant="middle" component="li" />
-            <ListItem alignItems="flex-start">
-                <div>
-                    <Grid container direction="row"
-                    justify="center"
-                    alignItems="center" spacing={1}>
-                        <Grid item xs={3}>
-                            <img className="logo" alt="Walmart logo" src={walmartlogo}/>
-                        </Grid>
-                        <Grid item xs={9} container>
-                            <Grid direction="row" container>
-                                <Grid item xs={11} style={{padding:"0.5%"}}>
-                                    <Typography style={{fontSize: "0.7em"}}>
-                                        <b>Walmart</b>
-                                    </Typography>
-                                    <Typography style={{fontSize: "0.5em"}}>
-                                        Chino Spectrum Towne Center 3943 Grand Ave, Chino, United States. CA 91710
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={1}>
-                                    <IconButton color="inherit" aria-label="heart" style={{paddingLeft: 0}}>
-                                        <FavoriteBorderIcon />
-                                    </IconButton>
-                                </Grid>
-                            </Grid>
-                            <Grid direction="row" container>
-                                <Grid item xs={3}>
-                                    <GaugeChart id="gauge5"
-                                    nrOfLevels={25}
-                                    hideText={true}
-                                    animate={false}
-                                    needleColor={"#C8CACF"}
-                                    needleBaseColor={"#000"}
-                                    colors={["#3AAEFF", "#37B75B", "#F3DC41", "#F9741B", "#FF0101"]} 
-                                    arcWidth={0.3} 
-                                    percent={0.37} 
-                                    />
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <div></div>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Link to="/storeinfo" style={{textDecoration: "none"}}>
-                                        <Button
-                                            variant="contained"
-                                            startIcon={<BookmarkIcon />}
-                                            className={classes.smallbutton}
-                                        >
-                                            <b>BOOK YOUR SLOT</b>
-                                        </Button>
-                                    </Link>
-                                </Grid>
-                            </Grid>  
-                        </Grid>
-                    </Grid>
-                </div>
-            </ListItem>
-            
+            {storeList.map((store,index) => {
+                const storeItem = <StoreListItem {...store}
+                />;
+
+                if (index === 0) return <div>{storeItem}</div>;
+
+                return <div>
+                        <Divider variant="middle" component="li" />
+                        {storeItem}                        
+                    </div>;
+            })}
         </List>
       </div>
     );
 }
 
 export default StoreList;
-
-
