@@ -3,6 +3,9 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.x"
+  },
   "dependencies": {
     "@devexpress/dx-react-chart": "^2.6.3",
     "@devexpress/dx-react-chart-material-ui": "^2.6.3",
@@ -28,7 +31,7 @@
     "react-material-ui-carousel": "^1.6.0",
     "react-responsive-carousel": "^3.2.8",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
